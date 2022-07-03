@@ -129,3 +129,10 @@ def contacto(request):
             data["form"] = formulario
 
     return render(request, 'Blog/contacto.html', data)
+
+def about(self):
+
+    plantilla = loader.get_template('about.html')
+    documento = plantilla.render()
+
+    return HttpResponse(documento)
