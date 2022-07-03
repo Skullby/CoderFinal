@@ -14,4 +14,5 @@ urlpatterns = [
     path('blogDelete/<pk>', views.BlogDelete.as_view(), name="Delete"),
     path('blogDetail/<pk>', views.BlogDetail.as_view(), name="Detail"),
     path('contactos/' , views.contacto, name="Contacto"),
+    path('about/', views.about, name = "About")
 ]
