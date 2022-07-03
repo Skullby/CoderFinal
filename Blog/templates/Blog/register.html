@@ -1,14 +1,16 @@
 {% extends 'Blog/padre.html' %}
 {% load static %}
 {% block contenidoQueCambia %}
+<h2 style="padding:10px ;">Unite a nuestro blog!!</h2>
 
 <form action="" method="post">
     {% csrf_token %}
-
-    {{ form.as_p }}
-
-    <button type="submit">Registrarse</button>
-
+    <div style="padding:20px ;">
+        {{ form.as_p }}
+    </div>
+    <div style="padding: 10px;">
+        <button type="submit">Registrate</button>
+    </div>
 </form>
 
 {% endblock %}

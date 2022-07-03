@@ -93,9 +93,9 @@ def editarPerfil(request):
     return render(request, "Blog/editarPerfil.html", {"form":form , "usuario":usuario})
 
 
-class BlogList(LoginRequiredMixin,ListView):
+class BlogList(ListView):
     model = Post
-    template_name = "Blog/blogList.html"
+    template_name = "Blog/inicio.html"
 
 
 class BlogDetail(LoginRequiredMixin,DetailView):
@@ -106,14 +106,21 @@ class BlogDetail(LoginRequiredMixin,DetailView):
 class BlogPost(LoginRequiredMixin,CreateView):
     model = Post
     template_name = "Blog/createBlog.html"
-    success_url = "/inicio/"
+    success_url = "/"
     fields = ['titulo' ,'subtitulo', 'fecha' , 'cuerpo' , 'autor']
 
 
 class BlogDelete(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = "Blog/confirmDelete.html"
-    success_url = "/inicio/"
+    success_url = "/"
+
+class BlogUpdate(LoginRequiredMixin, UpdateView):
+    model = Post
+    template_name = "Blog/updateBlog.html"
+    success_url = "/"
+    fields = ['titulo' ,'subtitulo', 'fecha' , 'cuerpo' , 'autor']
+
 
 def contacto(request):
     data = {
@@ -124,7 +131,7 @@ def contacto(request):
         formulario = ContactoForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            data["mensaje"] = "contacto guardado"
+            data["mensaje"] = "Contacto Guardado"
         else:
             data["form"] = formulario
 

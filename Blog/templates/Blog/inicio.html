@@ -1,5 +1,31 @@
 {% extends 'Blog/padre.html' %}
 {% load static %}
 {% block contenidoQueCambia %}
-<h2><a href="{% url 'List' %}">Ver Posteos</a></h2>
+
+<ul>
+{% for post in object_list %}
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <!-- Post preview-->
+                <div class="post-preview">
+                    <a href="{% url 'Detail' post.id %}">
+                        <h2 class="post-title">{{ post.titulo }}</h2>
+                        <h3 class="post-subtitle">{{ post.subtitulo }}</h3>
+                    </a>
+                    <p class="post-meta">
+                        Autor:
+                        <a>{{ post.autor }} ,</a>
+                        en {{ post.fecha }}
+                    </p>
+                    <a class="btn btn-primary text-uppercase" href="{% url 'Update' post.id %}">Editar</a></div>
+                    <br>
+                    <a class="btn btn-primary text-uppercase" href="{% url 'Delete' post.id %}">Borrar</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</ul>
 {% endblock %}
+
