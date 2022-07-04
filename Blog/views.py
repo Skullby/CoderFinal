@@ -139,7 +139,7 @@ def contacto(request):
 
 def about(self):
 
-    plantilla = loader.get_template('about.html')
+    plantilla = loader.get_template('Blog/about.html')
     documento = plantilla.render()
 
     return HttpResponse(documento)
