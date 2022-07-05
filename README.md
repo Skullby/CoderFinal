@@ -51,6 +51,10 @@ correr en la terminal:  python3 manage.py runserver
 
 Abrir en un navegador la url: http://127.0.0.1:8000/ 
 
+## Video Recorriendo el Blog
+
+YouTube: https://www.youtube.com/watch?v=3jYXnVFXoZE
+
 
 ## Ejecutando las pruebas ⚙️
 
